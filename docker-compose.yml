@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  namenode:
+    image: hdfs-namenode
+    ports:
+      - "9010:9010"
+      - "2222:22"
+      - "50070:50070"
+    volumes:
+      - ./data:/hadoop/data
+    environment:
+      - "HADOOP_CONF_DIR=/etc/hadoop"
+      - "USER=root"
